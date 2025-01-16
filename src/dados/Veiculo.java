@@ -1,6 +1,7 @@
 package dados;
 
-public class Veiculo {
+public abstract class Veiculo {
+    private double preco;
     private String placa;
     private String marca;
     private String modelo;
@@ -11,7 +12,27 @@ public class Veiculo {
     private String historico;
 
 
-    public Veiculo(String placa, String marca, String modelo, String cor, int ano, String tipo, double quilometragem){
-
+    public Veiculo(double preco, String placa, String marca, String modelo, String cor, int ano, String tipo, double quilometragem){
+        this.preco = preco;
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.cor = cor;
+        this.ano = ano;
+        this.tipo = tipo;
+        this.quilometragem = quilometragem;
     }
+    public double getPreco() {return preco;}
+    public String getPlaca() {return placa;}
+    public String getMarca() {return marca;}
+    public String getModelo() {return modelo;}
+    public String getCor() {return cor;}
+    public int getAno() {return ano;}
+    public String getTipo() {return tipo;}
+    public double getQuilometragem() {return quilometragem;}
+    public String getHistorico() {return historico;}
+
+    public abstract double calculaAutonomia();
+    public abstract double calculaIPVA();
+    public abstract double calculaFinanciamento();
 }
