@@ -35,7 +35,5 @@ public class Veiculo {
     public double calculaIPVA(){
         return getPreco()*0.01;
     }
-    public double calculaFinanciamento(){
-        return 0;
-    }
+
 }
