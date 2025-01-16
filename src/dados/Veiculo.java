@@ -1,6 +1,6 @@
 package dados;
 
-public abstract class Veiculo {
+public class Veiculo {
     private double preco;
     private String placa;
     private String marca;
@@ -32,7 +32,10 @@ public abstract class Veiculo {
     public double getQuilometragem() {return quilometragem;}
     public String getHistorico() {return historico;}
 
-    public abstract double calculaAutonomia();
-    public abstract double calculaIPVA();
-    public abstract double calculaFinanciamento();
+    public double calculaIPVA(){
+        return getPreco()*0.01;
+    }
+    public double calculaFinanciamento(){
+        return 0;
+    }
 }
