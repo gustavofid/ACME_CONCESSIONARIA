@@ -16,8 +16,5 @@ public class telaCliente {
 public telaCliente(Administracao adm, JanelaCliente janelaCliente) {
 
 }
-
-
-
     public JPanel getPainelCliente() { return painelCliente; }
 }
