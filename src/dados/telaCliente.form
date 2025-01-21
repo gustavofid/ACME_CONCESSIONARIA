@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="28ebe" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+      <component id="28ebe" class="javax.swing.JTextArea" binding="campoMensagem">
         <constraints>
           <grid row="0" column="2" row-span="5" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
@@ -16,7 +16,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="3c7ca" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="3c7ca" class="javax.swing.JTextField" binding="nomeCliente">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -32,7 +32,7 @@
           <text value="Nome Completo"/>
         </properties>
       </component>
-      <component id="fa9ab" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="fa9ab" class="javax.swing.JTextField" binding="cpfCliente">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -48,7 +48,7 @@
           <text value="CPF"/>
         </properties>
       </component>
-      <component id="7815b" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+      <component id="7815b" class="javax.swing.JTextField" binding="emailCilente">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -64,7 +64,7 @@
           <text value="E-mail"/>
         </properties>
       </component>
-      <component id="c38e5" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+      <component id="c38e5" class="javax.swing.JTextField" binding="telefoneCliente">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -80,7 +80,7 @@
           <text value="Telefone"/>
         </properties>
       </component>
-      <component id="4714c" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+      <component id="4714c" class="javax.swing.JComboBox" binding="pagamentoCliente">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -100,7 +100,7 @@
           <text value="Pagamento"/>
         </properties>
       </component>
-      <component id="2d6fc" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+      <component id="2d6fc" class="javax.swing.JTextField" binding="parcelasCliente">
         <constraints>
           <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -116,7 +116,7 @@
           <text value="Parcelas Desejadas"/>
         </properties>
       </component>
-      <component id="e56f0" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+      <component id="e56f0" class="javax.swing.JTextField" binding="valorCliente">
         <constraints>
           <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -130,6 +130,14 @@
         </constraints>
         <properties>
           <text value="Valor de Entrada"/>
+        </properties>
+      </component>
+      <component id="86e7c" class="javax.swing.JButton" binding="cadastrarButton" default-binding="true">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Cadastrar"/>
         </properties>
       </component>
     </children>
