@@ -3,9 +3,10 @@ import dados.*;
 
 public class ACME_CONCESSIONARIA {
     //private JanelaCliente janelaCliente;
-    private Administracao adm;
+    private Administracao adm = new Administracao();
+    private JanelaCliente janelaCliente = new JanelaCliente(adm);
 
     public void executar(){
-      new JanelaCliente(adm);
+      new telaCliente(adm,janelaCliente);
     }
 }

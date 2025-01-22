@@ -17,27 +17,33 @@ public class telaCliente {
     private JButton cadastrarButton;
 
     public telaCliente(Administracao adm, JanelaCliente janelaCliente) {
+        if (adm == null) {
+            throw new IllegalArgumentException("Instância de Administracao não pode ser nula!");
+        }
         cadastrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Cliente cliente = null;
                 try{
                     String nome = nomeCliente.getText();
                     String cpf = cpfCliente.getText();
                     String email = emailCilente.getText();
                     String telefone = telefoneCliente.getText();
                     double valor = Double.parseDouble(valorCliente.getText());
+                    Cliente cliente;
 
                     if(pagamentoCliente.getSelectedItem().toString().equals("À vista")){
                         cliente = new Cliente(nome,cpf,email,telefone,valor,0);
+                        adm.addCliente(cliente);
                         campoMensagem.setText("Cliente cadastrado com sucesso!");
                     } else if(pagamentoCliente.getSelectedItem().toString().equals("Financiamento")) {
                         int parcelas = Integer.parseInt(parcelasCliente.getText());
                         cliente = new Cliente(nome,cpf,email,telefone,valor,parcelas);
+                        adm.addCliente(cliente);
                         campoMensagem.setText("Cliente cadastrado com sucesso!");
-                    }else {
-                        campoMensagem.setText("Selecione uma forma de pagamento");
+                    }else{
+                        campoMensagem.setText("Selecione uma forma de pagamento!");
                     }
+
 
                 }catch(Exception ex){
                     JOptionPane.showMessageDialog(null, ex.getMessage());
