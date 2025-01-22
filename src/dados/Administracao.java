@@ -16,7 +16,7 @@ public class Administracao {
 
     public boolean addVeiculo(Veiculo veiculo) {
         for(int i=0; i<listaVeiculos.size(); i++) {
-            if(listaVeiculos.get(i) == veiculo){
+            if(listaVeiculos.get(i).equals(veiculo.getPlaca())){
                 return false;
             }
         }
@@ -25,7 +25,7 @@ public class Administracao {
     }
     public boolean removeVeiculo(Veiculo veiculo) {
         for(int i=0; i<listaVeiculos.size(); i++) {
-            if(listaVeiculos.get(i) == veiculo){
+            if(listaVeiculos.get(i).equals(veiculo.getPlaca())){
                 listaVeiculos.remove(i);
                 return true;
             }
@@ -41,15 +41,7 @@ public class Administracao {
         listaClientes.add(cliente);
         return true;
     }
-    public boolean removeCliente(Cliente cliente) {
-        for(int i=0; i<listaClientes.size(); i++) {
-            if(listaClientes.get(i).equals(cliente.getCpf())){
-                listaClientes.remove(i);
-                return true;
-            }
-        }
-        return false;
-    }
+
     public double simulaFinanciamento(Veiculo v, Cliente c){
         int n_parcelas = 10;
         double valorEntrada = c.getValor();

@@ -14,13 +14,13 @@ public class telaCliente {
     private JComboBox pagamentoCliente;
     private JTextField parcelasCliente;
     private JTextField valorCliente;
-    private JButton cadastrarButton;
+    private JButton cadastrarCliente;
 
     public telaCliente(Administracao adm, JanelaCliente janelaCliente) {
         if (adm == null) {
             throw new IllegalArgumentException("Instância de Administracao não pode ser nula!");
         }
-        cadastrarButton.addActionListener(new ActionListener() {
+        cadastrarCliente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{

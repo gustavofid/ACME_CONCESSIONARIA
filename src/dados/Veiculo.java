@@ -1,7 +1,7 @@
 package dados;
 
 public class Veiculo {
-    private double preco;
+
     private String placa;
     private String marca;
     private String modelo;
@@ -10,10 +10,10 @@ public class Veiculo {
     private String tipo;
     private double quilometragem;
     private String historico;
+    private double preco;
 
 
-    public Veiculo(double preco, String placa, String marca, String modelo, String cor, int ano, String tipo, double quilometragem){
-        this.preco = preco;
+    public Veiculo(String placa, String marca, String modelo, String cor, int ano, String tipo, double quilometragem, String historico, double preco){
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
@@ -21,8 +21,10 @@ public class Veiculo {
         this.ano = ano;
         this.tipo = tipo;
         this.quilometragem = quilometragem;
+        this.historico = historico;
+        this.preco = preco;
     }
-    public double getPreco() {return preco;}
+
     public String getPlaca() {return placa;}
     public String getMarca() {return marca;}
     public String getModelo() {return modelo;}
@@ -31,6 +33,7 @@ public class Veiculo {
     public String getTipo() {return tipo;}
     public double getQuilometragem() {return quilometragem;}
     public String getHistorico() {return historico;}
+    public double getPreco() {return preco;}
 
     public double calculaIPVA(){
         return getPreco()*0.01;
