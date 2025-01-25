@@ -15,6 +15,7 @@ public class telaCliente {
     private JTextField parcelasCliente;
     private JTextField valorCliente;
     private JButton cadastrarCliente;
+    private JButton voltarButton;
 
     public telaCliente(Administracao adm, JanelaCliente janelaCliente) {
         if (adm == null) {
@@ -48,6 +49,12 @@ public class telaCliente {
                 }catch(Exception ex){
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
+            }
+        });
+        voltarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                janelaCliente.setVisible(false);
             }
         });
 }

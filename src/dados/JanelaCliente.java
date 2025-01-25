@@ -16,7 +16,6 @@ public class JanelaCliente extends JDialog {
 
         setSize(800,600);
         setTitle("Cadastro de Cliente");
-        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setModal(true);
         setVisible(true);
     }

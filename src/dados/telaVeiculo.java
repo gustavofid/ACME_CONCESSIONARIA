@@ -17,6 +17,7 @@ public class telaVeiculo {
     private JButton cadastrarVeiculo;
     private JTextField precoVeiculo;
     private JTextField historicoVeiculo;
+    private JButton voltarButton;
 
     public telaVeiculo(Administracao adm, JanelaVeiculo janelaVeiculo) {
         if (adm == null) {
@@ -56,6 +57,13 @@ public class telaVeiculo {
             }catch(Exception ex){
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
+            }
+
+        });
+        voltarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                janelaVeiculo.setVisible(false);
             }
         });
     }

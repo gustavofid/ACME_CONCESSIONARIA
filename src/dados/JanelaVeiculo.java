@@ -16,7 +16,6 @@ public class JanelaVeiculo extends JDialog {
 
         setSize(800,600);
         setTitle("Cadastro de Veículo");
-        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setModal(true);
         setVisible(true);
     }

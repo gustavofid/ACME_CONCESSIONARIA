@@ -10,7 +10,7 @@
     <children>
       <component id="cddaf" class="javax.swing.JTextArea" binding="campoMensagem">
         <constraints>
-          <grid row="0" column="2" row-span="8" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="0" column="2" row-span="7" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
@@ -143,14 +143,6 @@
           <text value="Histórico"/>
         </properties>
       </component>
-      <component id="5e526" class="javax.swing.JButton" binding="cadastrarVeiculo">
-        <constraints>
-          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Cadastrar"/>
-        </properties>
-      </component>
       <component id="e2bf2" class="javax.swing.JTextField" binding="precoVeiculo">
         <constraints>
           <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -174,6 +166,22 @@
           </grid>
         </constraints>
         <properties/>
+      </component>
+      <component id="5e526" class="javax.swing.JButton" binding="cadastrarVeiculo">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Cadastrar"/>
+        </properties>
+      </component>
+      <component id="d9d7e" class="javax.swing.JButton" binding="voltarButton" default-binding="true">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Voltar"/>
+        </properties>
       </component>
     </children>
   </grid>
