@@ -12,6 +12,8 @@ public class telaPrincipal {
     private JTextArea campoPrincipal;
     private JButton verificarListaDeClientesButton;
     private JButton sairButton;
+    private JButton solicitarTestDriveButton;
+    private JButton reservasDeTestDriveButton;
 
     public telaPrincipal(Administracao administracao, JanelaPrincipal janelaPrincipal) {
         cadastrarClienteButton.addActionListener(e -> {
@@ -65,6 +67,32 @@ public class telaPrincipal {
                 }
             }
         });
+        solicitarTestDriveButton.addActionListener(e ->{
+            JFrame testeDrive = new JFrame("Solicitar Test Drive");
+            testeDrive.setContentPane((new telaTesteDrive(administracao, new JanelaTestDrive(administracao)).getPainelTestDrive()));
+            testeDrive.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            testeDrive.pack();
+            testeDrive.setVisible(true);
+        });
+        reservasDeTestDriveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if (!administracao.getListaReservaTestDrive().isEmpty()) {
+                        StringBuilder listaReservas = new StringBuilder("Reservas de Test Drive:\n");
+                        for (ReservaTestDrive reserva : administracao.getListaReservaTestDrive()) {
+                            listaReservas.append(reserva.toString()).append("\n");
+                        }
+                        campoPrincipal.setText(listaReservas.toString());
+                    } else {
+                        campoPrincipal.setText("Nenhuma reserva cadastrada!");
+                    }
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Erro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
         sairButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
