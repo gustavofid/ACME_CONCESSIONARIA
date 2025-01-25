@@ -33,21 +33,42 @@ public class telaPrincipal {
             public void actionPerformed(ActionEvent e) {
                 try {
                     if (!administracao.getListaVeiculos().isEmpty()) {
-                        // Criação do texto que representa os veículos
                         StringBuilder estoque = new StringBuilder("Veículos em estoque:\n");
                         for (Veiculo v : administracao.getListaVeiculos()) {
                             estoque.append(v.toString()).append("\n");
                         }
-                        // Define o texto no campoPrincipal (JTextArea)
                         campoPrincipal.setText(estoque.toString());
                     } else {
-                        // Mensagem para caso não existam veículos no estoque
                         campoPrincipal.setText("O estoque está vazio no momento!");
                     }
                 } catch (Exception ex) {
-                    // Mostra o erro em um JOptionPane em caso de falha
                     JOptionPane.showMessageDialog(null, "Erro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+        verificarListaDeClientesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    if(!administracao.getListaClientes().isEmpty()){
+                        StringBuilder listaClientes = new StringBuilder("Clientes Cadastrados:\n");
+                        for (Cliente c: administracao.getListaClientes()) {
+                            listaClientes.append(c.toString()).append("\n");
+                        }
+                        campoPrincipal.setText(listaClientes.toString());
+                    }else{
+                        campoPrincipal.setText("Nenhum cliente cadastrado!");
+                    }
+
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, "Erro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+        sairButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
             }
         });
 

@@ -23,4 +23,15 @@ public class Cliente {
     public double getValor() {return valor;}
     public double getParcelas() {return parcelas;}
 
+    public String toString(){
+        return String.format("""
+                -------------------------------------------------------------
+                Nome do Cliente: %s
+                CPF do Cliente: %s
+                Email do Cliente: %s
+                Telefone do Cliente: %s
+                Entrada: R$ %.2f
+                Parcelas: %d
+                """,nome,cpf,email,telefone,valor,parcelas);
+    }
 }

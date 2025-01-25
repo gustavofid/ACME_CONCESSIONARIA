@@ -54,7 +54,6 @@ public class Veiculo {
                 Quilometragem: %.2f
                 Historico: %s
                 Preco: %.2f
-                               
                 """,placa,marca,modelo,cor,ano,tipo,quilometragem,historico,preco);
     }
 
