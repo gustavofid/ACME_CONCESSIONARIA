@@ -1,13 +1,15 @@
 package dados;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class telaPrincipal {
     private JPanel painelPrincipal;
     private JButton cadastrarClienteButton;
     private JButton cadastrarVeículoButton;
     private JButton verificarEstoqueButton;
-    private JTextArea textArea1;
+    private JTextArea campoPrincipal;
     private JButton verificarListaDeClientesButton;
     private JButton sairButton;
 
@@ -25,6 +27,28 @@ public class telaPrincipal {
            cadastroVeiculo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
            cadastroVeiculo.pack();
            cadastroVeiculo.setVisible(true);
+        });
+        verificarEstoqueButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if (!administracao.getListaVeiculos().isEmpty()) {
+                        // Criação do texto que representa os veículos
+                        StringBuilder estoque = new StringBuilder("Veículos em estoque:\n");
+                        for (Veiculo v : administracao.getListaVeiculos()) {
+                            estoque.append(v.toString()).append("\n");
+                        }
+                        // Define o texto no campoPrincipal (JTextArea)
+                        campoPrincipal.setText(estoque.toString());
+                    } else {
+                        // Mensagem para caso não existam veículos no estoque
+                        campoPrincipal.setText("O estoque está vazio no momento!");
+                    }
+                } catch (Exception ex) {
+                    // Mostra o erro em um JOptionPane em caso de falha
+                    JOptionPane.showMessageDialog(null, "Erro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            }
         });
 
     }

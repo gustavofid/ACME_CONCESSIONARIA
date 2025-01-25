@@ -39,4 +39,24 @@ public class Veiculo {
         return getPreco()*0.01;
     }
 
+    public String toString() {
+
+
+
+        return String.format("""
+                -------------------------------------------------------------
+                Placa do Veículo: %s
+                Marca: %s
+                Modelo: %s
+                Cor: %s
+                Ano: %d
+                Tipo: %s
+                Quilometragem: %.2f
+                Historico: %s
+                Preco: %.2f
+                               
+                """,placa,marca,modelo,cor,ano,tipo,quilometragem,historico,preco);
+    }
+
+
 }
