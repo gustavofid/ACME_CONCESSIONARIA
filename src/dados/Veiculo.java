@@ -41,8 +41,6 @@ public class Veiculo {
 
     public String toString() {
 
-
-
         return String.format("""
                 -------------------------------------------------------------
                 Placa do Veículo: %s
