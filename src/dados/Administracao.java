@@ -8,7 +8,6 @@ public class Administracao {
     private ArrayList<Veiculo> listaVeiculos;
     private ArrayList<Cliente> listaClientes;
     private ArrayList<ReservaTestDrive> listaTestesDrive;
-    private telaTesteDrive telaDrive;
 
     public Administracao() {
         listaVeiculos = new ArrayList<>();
@@ -17,6 +16,7 @@ public class Administracao {
     }
     public ArrayList<Veiculo> getListaVeiculos() {return listaVeiculos;}
     public ArrayList<Cliente> getListaClientes() {return listaClientes;}
+    public ArrayList<ReservaTestDrive> getListaReservaTestDrive() {return listaTestesDrive;}
 
     public boolean addVeiculo(Veiculo veiculo) {
         for(int i=0; i<listaVeiculos.size(); i++) {
@@ -75,8 +75,6 @@ public class Administracao {
             JOptionPane.showMessageDialog(null, "Erro: Cliente não encontrado!" , "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
-
-    public ArrayList<ReservaTestDrive> getListaReservaTestDrive() {return listaTestesDrive;}
 
     public double simulaFinanciamento(Veiculo v, Cliente c){
         int n_parcelas = 10;

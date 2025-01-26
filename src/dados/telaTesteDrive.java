@@ -13,6 +13,7 @@ public class telaTesteDrive {
     private JTextArea campoTestDrive;
     private JButton solicitarButton;
     private JPanel painelTestDrive;
+    private JButton voltarButton;
     private List<String> reservas;
 
     public telaTesteDrive(Administracao adm, JanelaTestDrive janelaTestDrive) {
@@ -30,7 +31,7 @@ public class telaTesteDrive {
                     String placaVeiculo = placaVeiculoTest.getText();
 
                     if (clienteCpf.isEmpty() || placaVeiculo.isEmpty()) {
-                        throw new IllegalArgumentException("Por favor, preencha todos os campos!");
+                        campoTestDrive.setText("Por favor, preencha todos os campos!");
                     }
 
                     Cliente cliente = procurarCliente(clienteCpf);
@@ -51,6 +52,12 @@ public class telaTesteDrive {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Erro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+        voltarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                janelaTestDrive.setVisible(false);
             }
         });
 

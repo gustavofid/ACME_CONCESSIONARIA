@@ -19,8 +19,13 @@ public class ReservaTestDrive {
 
     @Override
     public String toString() {
-        return "Cliente: " + cliente.getNome() + " (CPF: " + cliente.getCpf() + ")" +
-                " -> Veículo: " + veiculo.getModelo() + " (Placa: " + veiculo.getPlaca() + ")";
+        return String.format("""
+                -------------------------------------------------------------
+                Cliente: %s
+                CPF do Cliente: %s
+                Modelo do Veículo: %s
+                Placa do veiculo: %s
+                """,cliente.getNome(),cliente.getCpf(),veiculo.getModelo(),veiculo.getPlaca());
     }
 }
 
