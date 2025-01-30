@@ -11,6 +11,7 @@ public class Veiculo {
     private double quilometragem;
     private String historico;
     private double preco;
+    private boolean disponivel;
 
 
     public Veiculo(String placa, String marca, String modelo, String cor, int ano, String tipo, double quilometragem, String historico, double preco){
@@ -23,6 +24,7 @@ public class Veiculo {
         this.quilometragem = quilometragem;
         this.historico = historico;
         this.preco = preco;
+        this.disponivel = false;
     }
 
     public String getPlaca() {return placa;}
@@ -34,6 +36,7 @@ public class Veiculo {
     public double getQuilometragem() {return quilometragem;}
     public String getHistorico() {return historico;}
     public double getPreco() {return preco;}
+    public void setDisponivel(boolean disponivel){this.disponivel = disponivel;}
 
     public double calculaIPVA(){
         return getPreco()*0.01;

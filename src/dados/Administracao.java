@@ -2,6 +2,7 @@ package dados;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Administracao {
 
@@ -75,7 +76,20 @@ public class Administracao {
             JOptionPane.showMessageDialog(null, "Erro: Cliente não encontrado!" , "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
+    public boolean removeReservaTestDrive(String cpfCliente, String placaVeiculo){
+        Iterator<ReservaTestDrive> iterator = listaTestesDrive.iterator();
+        while(iterator.hasNext()){
+            ReservaTestDrive reservaTestDrive = iterator.next();
 
+            if(reservaTestDrive.getCliente().getCpf().equals(cpfCliente) && reservaTestDrive.getVeiculo().getPlaca().equals(placaVeiculo)){
+                iterator.remove();
+                reservaTestDrive.getVeiculo().setDisponivel(true);
+                return true;
+            }
+        }
+        return false;
+
+    }
     public double simulaFinanciamento(Veiculo v, Cliente c){
         int n_parcelas = 10;
         double valorEntrada = c.getValor();

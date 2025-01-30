@@ -14,6 +14,7 @@ public class telaTesteDrive {
     private JButton solicitarButton;
     private JPanel painelTestDrive;
     private JButton voltarButton;
+    private JButton removerSolicitacaoButton;
     private List<String> reservas;
 
     public telaTesteDrive(Administracao adm, JanelaTestDrive janelaTestDrive) {
@@ -58,6 +59,27 @@ public class telaTesteDrive {
             @Override
             public void actionPerformed(ActionEvent e) {
                 janelaTestDrive.setVisible(false);
+            }
+        });
+        removerSolicitacaoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    String cpfCliente = cpfClienteTest.getText();
+                    String placaVeiculo = placaVeiculoTest.getText();
+
+                    if (cpfCliente.isEmpty() || placaVeiculo.isEmpty()) {
+                        throw new IllegalArgumentException("Por favor, preencha todos os campos!");
+                    }
+                    boolean removido = adm.removeReservaTestDrive(cpfCliente, placaVeiculo);
+                    if (removido) {
+                        campoTestDrive.setText("Reserva removida com sucesso!");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Reserva não encontrada!","Erro", JOptionPane.ERROR_MESSAGE);
+                    }
+                }catch(Exception ex){
+                    JOptionPane.showMessageDialog(null, "Erro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
 
