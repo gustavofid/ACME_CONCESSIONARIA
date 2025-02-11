@@ -14,6 +14,8 @@ public class telaPrincipal {
     private JButton sairButton;
     private JButton solicitarTestDriveButton;
     private JButton reservasDeTestDriveButton;
+    private JButton simularFinancimentoButton;
+    private JButton realizarVendaButton;
 
     public telaPrincipal(Administracao administracao, JanelaPrincipal janelaPrincipal) {
         cadastrarClienteButton.addActionListener(e -> {
@@ -91,6 +93,13 @@ public class telaPrincipal {
                     JOptionPane.showMessageDialog(null, "Erro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             }
+        });
+        simularFinancimentoButton.addActionListener(e ->{
+            JFrame simulaFinanciamento = new JFrame("Simular Financimento");
+            simulaFinanciamento.setContentPane((new telaFinanciamento(administracao, new JanelaFinanciamento(administracao)).getPainelFinanciamento()));
+            simulaFinanciamento.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            simulaFinanciamento.pack();
+            simulaFinanciamento.setVisible(true);
         });
 
         sairButton.addActionListener(new ActionListener() {

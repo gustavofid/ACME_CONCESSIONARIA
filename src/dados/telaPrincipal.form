@@ -72,6 +72,22 @@
           <text value="Reservas de Test Drive"/>
         </properties>
       </component>
+      <component id="84641" class="javax.swing.JButton" binding="simularFinancimentoButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Simular Financimento"/>
+        </properties>
+      </component>
+      <component id="55558" class="javax.swing.JButton" binding="realizarVendaButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Realizar Venda"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
